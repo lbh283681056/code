@@ -29,3 +29,37 @@ dependencies {
     implementation 'org.greenrobot:eventbus:3.0.0'
 
 }
+
+
+//task uploadArchivesNew(dependsOn: uploadArchives)  {
+//    doLast {
+//        println "uploadArchivesNew..."
+//        // Get existing pom file
+//        def pomFileLocation = "../repo/com/xxx/sdk/" + android.defaultConfig.versionName + "/sdk-" + android.defaultConfig.versionName + ".pom"
+//        Node xml = new XmlParser().parse(pomFileLocation)
+//
+//        def dependencies = xml.dependencies.first();
+//
+//        configurations.compile.resolvedConfiguration.firstLevelModuleDependencies.each {
+//            //将common的引用加入pom（但不包括common项目本身）
+//            if (it.moduleGroup.equals("xxx") && it.moduleName.equals("common")) {
+//                it.allModuleArtifacts.each {
+//                    String moduleGroup = it.getModuleVersion().getId().getGroup()
+//                    String moduleName = it.getModuleVersion().getId().getName()
+//                    String moduleVersion = it.getModuleVersion().getId().getVersion()
+//                    if (!moduleGroup.equals("xxx") && !moduleName.equals("common")) {
+//                        def newDepNode = dependencies.appendNode('dependency')
+//                        newDepNode.appendNode('groupId', moduleGroup)
+//                        newDepNode.appendNode('artifactId', moduleName)
+//                        newDepNode.appendNode('version', moduleVersion)
+//                        newDepNode.appendNode('scope', 'compile')
+//                    }
+//                }
+//            }
+//        }
+//
+//        // Overwrite existing pom file
+//        new XmlNodePrinter(new PrintWriter(new FileWriter(pomFileLocation))).print(xml)
+//    }
+//}
+
